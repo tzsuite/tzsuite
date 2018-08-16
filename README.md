@@ -1,6 +1,6 @@
 # tzsuite
 
-Suite of tools for working with Tezos in Golang. Includes packages for key manipulation, signing and rich RPC interactions, such as automated transaction batching.
+A collection of tools for working with Tezos in Golang. tzsuite contains packages for key manipulation, signing and rich RPC interactions, such as automated transaction batching.
 
 ## Usage
 Send transactions with no hassle. They will be organized into batches automatically.
