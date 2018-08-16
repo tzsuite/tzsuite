@@ -14,6 +14,18 @@ if err != nil {
 }
 ```
 
+You can dispatch them as they come, without worrying about timing or batch size limits.
+```go
+for {
+	err := r.BatchTransfer(123000, user1keys, nil, user1, user2)
+	if err != nil {
+		log.Fatal(err)
+	}
+	
+	time.Sleep(time.Second * 5)
+}
+```
+
 Transactions to smart contracts.
 ```go
 // prepare contract parameters
