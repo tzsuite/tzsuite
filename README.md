@@ -37,9 +37,27 @@ if err != nil {
 }
 ```
 
+Get notified about operations involving an address.
+```go
+activity, unsub := r.WatchAddress(user1)
+timer := time.NewTimer(time.Minute * 2)
+FOR:
+for {
+	select {
+	case _ = <-timer.C:
+		break FOR
+	case a := <-activity:
+		fmt.Printf("Detected address activity in block: %s\noperation: %#v\n", a.BlockHash, a.Operation)
+	}
+}
+
+fmt.Println("Unsubscribing.")
+close(unsub)
+```
+
 Expecting a deposit? You will be notified through a channel when it arrives.
 ```go
-paid := r.ExpectBalance(123465, "tz1Ph8mdwaRp71XvixaExcNKtPvQshe5BwcR")
+paid := r.ExpectBalance(123465, user1)
 
 // block until deposit is received
 blockHash := <-paid
