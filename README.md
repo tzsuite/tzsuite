@@ -2,6 +2,10 @@
 
 tzsuite is a Go client library for the Tezos RPC API. It offers rich RPC interactions, such as automated transaction batching, operation receipts or alerts for specific addresses. It also contains packages for key manipulation and signing.
 
+## Status
+
+This is unmaintained due to lack of interest. If you are a business that has revenue and want to use this, contact us and we can talk about updating this to work with the current Tezos protocol. You can expect a six figure expense.
+
 ## Usage
 Send transactions with no hassle. They will be organized into batches automatically. You'll get notified when the transfer is transmitted to the network, and when it gets included into a block.
 ```go
